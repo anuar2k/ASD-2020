@@ -60,7 +60,7 @@ print(overlap(test2))
 print(overlap(test3))
 print(overlap(test4))
 
-print('')
+print()
 print(test1)
 print(test2) # nieposortowane, bo występują takie same początki
 print(test3)

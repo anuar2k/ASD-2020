@@ -1,3 +1,5 @@
+# algorytmy obrotu tablicy o k pozycji w czasie O(n) (vs. naiwne O(nk))
+
 from math import gcd
 
 #-------------------------------------------
@@ -9,6 +11,7 @@ def mirror(arr, l, r):
     for offset in range(ceil_div(r - l, 2)):
         arr[l + offset], arr[r - offset] = arr[r - offset], arr[l + offset]
 
+# obrót przez lustrzane odbicia
 def rotateMirror(arr, k):
     n = len(arr)
     k = k % n
@@ -34,6 +37,7 @@ def jumpCycle(arr, start, k):
         jumpCnt = jumpCnt + 1
     return jumpCnt
     
+# obrót przez skoki o n pozycji, bez nwd
 def rotateJump(arr, k):
     n = len(arr)
     jumpCnt = 0
@@ -55,6 +59,7 @@ def jumpCycleGCD(arr, start, k):
         arr[pos], carry = carry, arr[pos]
         cycle = pos != start
 
+# obrót przez skoki o n pozycji, z nwd (krótszy zapis)
 def rotateJumpGCD(arr, k):
     n = len(arr)
     pos = 0

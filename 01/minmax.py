@@ -1,4 +1,5 @@
 # znaleźć min i max w tablicy robiąc tylko 1.5n porównań (vs. 2n)
+
 def _min(a, b):
     return a if a < b else b
 

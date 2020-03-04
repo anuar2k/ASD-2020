@@ -1,3 +1,5 @@
+# proste algorytmy sortujące O(n^2)
+
 def bubbleSort(arr):
     n = len(arr)
 

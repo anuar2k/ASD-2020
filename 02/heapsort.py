@@ -1,3 +1,5 @@
+# sortowanie przez kopcowanie, O(nlogn)
+
 def heapify(arr, size, pos):
     maximum = pos
     lChild = pos * 2 + 1

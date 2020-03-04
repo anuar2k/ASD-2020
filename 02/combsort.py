@@ -1,3 +1,5 @@
+# sortowanie grzebieniowe, O(nlogn)
+
 def getSpan(span):
     span = span * 10 // 13
     return span if span >= 1 else 1
@@ -30,4 +32,3 @@ def combSort(arr, eleven = False):
 
 print(combSort([5, 4, 3, 2, 1]))
 print(combSort([3, 4, 5, 2, 1], True))
-

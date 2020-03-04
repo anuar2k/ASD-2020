@@ -3,6 +3,7 @@
 
 # sortuje okresy czasu wg początku okresu (przez zliczanie), jednocześnie sprawdzając,
 # czy nie ma dwóch okresów o takim samym początku - wtedy też się przecinają
+
 def countingSort(arr):
     minStartTime = arr[0][0]
     maxStartTime = arr[0][1]

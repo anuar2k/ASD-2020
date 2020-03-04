@@ -14,12 +14,12 @@ def minMax(arr):
 
     # może zostać nam nieparzysta liczba elementów do porównania, wtedy
     # jeden element musimy potraktować oddzielnie
-    if ((n - 1) % 2 == 1):
+    if (n - 1) % 2 == 1:
         startPos = 2
 
-        if (arr[1] > maxVal):
+        if arr[1] > maxVal:
             maxVal = arr[1]
-        if (arr[1] < minVal):
+        if arr[1] < minVal:
             minVal = arr[1]
     else:
         startPos = 1
@@ -27,7 +27,7 @@ def minMax(arr):
     for i in range(startPos, n, 2):
         # 0.5n porównań przy wejściu do if'a
         # 1n porównań wewnątrz if'a
-        if (arr[i] < arr[i + 1]):
+        if arr[i] < arr[i + 1]:
             minVal = _min(minVal, arr[i])
             maxVal = _max(maxVal, arr[i + 1])
         else:

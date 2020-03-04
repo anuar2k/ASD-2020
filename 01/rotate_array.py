@@ -30,7 +30,7 @@ def jumpCycle(arr, start, k):
     jumpCnt = 0
     n = len(arr)
     cycle = True
-    while(cycle):
+    while cycle:
         pos = (pos + k) % n
         arr[pos], carry = carry, arr[pos]
         cycle = pos != start
@@ -42,7 +42,7 @@ def rotateJump(arr, k):
     n = len(arr)
     jumpCnt = 0
     pos = 0
-    while (jumpCnt < n):
+    while jumpCnt < n:
         jumpCnt = jumpCnt + jumpCycle(arr, pos, k)
         pos = pos + 1
     return arr
@@ -54,7 +54,7 @@ def jumpCycleGCD(arr, start, k):
     carry = arr[start]
     n = len(arr)
     cycle = True
-    while (cycle):
+    while cycle:
         pos = (pos + k) % n
         arr[pos], carry = carry, arr[pos]
         cycle = pos != start

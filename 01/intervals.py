@@ -8,9 +8,9 @@ def countingSort(arr):
     maxStartTime = arr[0][1]
 
     for time in arr:
-        if (time[0] < minStartTime):
+        if time[0] < minStartTime:
             minStartTime = time[0]
-        if (time[0] > maxStartTime):
+        if time[0] > maxStartTime:
             maxStartTime = time[0]
     
     histSize = maxStartTime - minStartTime + 1
@@ -21,7 +21,7 @@ def countingSort(arr):
     
     for time in arr:
         idx = time[0] - minStartTime
-        if (hist[idx] is None):
+        if hist[idx] is None:
             hist[idx] = time
         else:
             # znaleźliśmy dwa okresy o tym samym początku, na ogół jest to
@@ -31,17 +31,17 @@ def countingSort(arr):
     
     idx = 0
     for i in range(0, histSize):
-        if (hist[i] is not None):
+        if hist[i] is not None:
             arr[idx] = hist[i]
             idx = idx + 1
     
     return False
         
 def overlap(arr):
-    if (not countingSort(arr)):
+    if not countingSort(arr):
         n = len(arr)
         for i in range(n - 1):
-            if (arr[i][1] > arr[i + 1][0]):
+            if arr[i][1] > arr[i + 1][0]:
                 return True
         
         return False

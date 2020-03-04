@@ -3,13 +3,13 @@ def heapify(arr, size, pos):
     lChild = pos * 2 + 1
     rChild = pos * 2 + 2
 
-    if (lChild < size and arr[lChild] > arr[maximum]):
+    if lChild < size and arr[lChild] > arr[maximum]:
         maximum = lChild
 
-    if (rChild < size and arr[rChild] > arr[maximum]):
+    if rChild < size and arr[rChild] > arr[maximum]:
         maximum = rChild
 
-    if (maximum != pos):
+    if maximum != pos:
         arr[pos], arr[maximum] = arr[maximum], arr[pos]
         heapify(arr, size, maximum)
 

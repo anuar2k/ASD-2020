@@ -3,7 +3,7 @@ def bubbleSort(arr):
 
     for i in range(n - 1):
         for j in range(n - 1 - i):
-            if (arr[j] > arr[j + 1]):
+            if arr[j] > arr[j + 1]:
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
 
 def selectionSort(arr):
@@ -13,7 +13,7 @@ def selectionSort(arr):
         minIdx = i
 
         for j in range(i + 1, n):
-            if (arr[j] < arr[minIdx]):
+            if arr[j] < arr[minIdx]:
                 minIdx = j
 
         arr[i], arr[minIdx] = arr[minIdx], arr[i]
@@ -25,7 +25,7 @@ def insertionSort(arr):
         to_insert = arr[i]
         j = i - 1
 
-        while (j >= 0 and arr[j] > to_insert):
+        while j >= 0 and arr[j] > to_insert:
             arr[j + 1] = arr[j]
             j = j - 1
 

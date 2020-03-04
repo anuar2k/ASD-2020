@@ -16,11 +16,11 @@ def combSort(arr, eleven = False):
     swapped = True
     nextSpan = getSpan11 if eleven else getSpan
 
-    while (span > 1 or swapped):
+    while span > 1 or swapped:
         span = nextSpan(span)
         swapped = False
         for idx in range(0, n - span):
-            if (arr[idx] > arr[idx + span]):
+            if arr[idx] > arr[idx + span]:
                 arr[idx], arr[idx + span] = arr[idx + span], arr[idx]
                 swapped = True
 

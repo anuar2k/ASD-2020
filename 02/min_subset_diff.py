@@ -42,5 +42,6 @@ def minSubSetDiff(arr, k):
 
     return minDiff
 
+#-------------------------------------------
 
 print(minSubSetDiff([1, 6, 6, 3], 3))

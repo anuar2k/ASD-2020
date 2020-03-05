@@ -34,7 +34,7 @@ def jumpCycle(arr, start, k):
         pos = (pos + k) % n
         arr[pos], carry = carry, arr[pos]
         cycle = pos != start
-        jumpCnt = jumpCnt + 1
+        jumpCnt += 1
     return jumpCnt
     
 # obrót przez skoki o n pozycji, bez nwd
@@ -43,8 +43,8 @@ def rotateJump(arr, k):
     jumpCnt = 0
     pos = 0
     while jumpCnt < n:
-        jumpCnt = jumpCnt + jumpCycle(arr, pos, k)
-        pos = pos + 1
+        jumpCnt += jumpCycle(arr, pos, k)
+        pos += 1
     return arr
 
 #-------------------------------------------

@@ -16,9 +16,7 @@ def countingSort(arr):
     
     histSize = maxStartTime - minStartTime + 1
 
-    hist = []
-    for i in range(0, histSize):
-        hist.append(None)
+    hist = [None] * histSize
     
     for time in arr:
         idx = time[0] - minStartTime
@@ -31,10 +29,10 @@ def countingSort(arr):
             return True
     
     idx = 0
-    for i in range(0, histSize):
+    for i in range(histSize):
         if hist[i] is not None:
             arr[idx] = hist[i]
-            idx = idx + 1
+            idx += 1
     
     return False
         

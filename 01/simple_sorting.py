@@ -29,7 +29,7 @@ def insertionSort(arr):
 
         while j >= 0 and arr[j] > to_insert:
             arr[j + 1] = arr[j]
-            j = j - 1
+            j -= 1
 
         arr[j + 1] = to_insert
         

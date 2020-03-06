@@ -1,4 +1,5 @@
 # znajdź wszystkie takie pary liczb w tablicy n-elementowej, by dawały one sumę k
+
 def movePtr(arr, ptr, direction):
     if direction:
         n = len(arr)
@@ -29,8 +30,8 @@ def countKSumPairs(arr, k):
     for val in arr:
         hist[val - minVal] += 1
 
-    l = movePtr(hist, -1, True)
-    r = movePtr(hist, histSize, False)
+    l = 0
+    r = histSize - 1
 
     result = 0
 

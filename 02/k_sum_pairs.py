@@ -1,4 +1,4 @@
-# znajdź wszystkie takie pary liczb w tablicy n-elementowej, by dawały one sumę k
+# znajdź wszystkie takie pary liczb w tablicy n-elementowej, by dawały one sumę k, O(n)
 
 def movePtr(arr, ptr, direction):
     if direction:

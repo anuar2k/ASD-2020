@@ -1,0 +1,13 @@
+Aleksander Wójtowicz, 400184
+
+Aby sprawdzić, czy każda z liczb jest sumą dwóch pozostałych z tej tablicy, należy najpierw
+posortować tą tablicę (tak naprawdę jakimkolwiek algorytmem o złożoności do O(n^2)), a następnie dla każdej
+liczby z tablicy spróbować układać sumę o jej wartości taki sposób, że bierzemy wskaźnik z lewego i prawego końca tablicy,
+wtedy jeśli suma dwóch elementów jest za duża, to należy ją obniżyć (przesuwając wskaźnik prawy w lewo), a jak za mała, to
+zwiększyć (lewy wskaźnik w prawo). W sytuacji, gdy wskaźniki się spotkają lub przeskoczą za siebie, nie możemy dla danej 
+liczby utworzyć sumy. Dodatkowo wskaźnik, który w tej tablicy wejdzie na swoją wartość musi przejść dalej póki nie napotka 
+wartości różnej od siebie (bo musi się składać z liczb różnych od niej).
+
+Algorytm działa, ponieważ każde przesunięcie wskaźników w lewo lub prawo potencjalnie "zbliża nas" do sumy, jaką chcemy uzyskać.
+
+Złożoność algorytmu wynosi złożoność sortowania + złożoność sprawdzeń, mianowicie O( <=n^2 + n*n ) = O(n^2)

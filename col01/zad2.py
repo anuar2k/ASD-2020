@@ -15,7 +15,8 @@ def partition(T, low, high):
 
     split = low
     for i in range(low, high):
-        if T[i] < T[high]:
+        #zmiana kierunku nierówności, bo tablica ma być malejąca
+        if T[i] > T[high]:
             T[i], T[split] = T[split], T[i]
             split += 1
 
@@ -37,17 +38,12 @@ def section(T, p, q):
     n = len(T)
     # skoro nasi zolnierze se ustawieni malejaco wg wzrostu, to zamiast wypierac p-tą wartosc wybieramy (n - 1 - p)tą
     # a potem (n - 1 - q)tą
-    quickSelect(T, 0, n - 1, n - 1 - p)
+    quickSelect(T, 0, n - 1, p)
     # w drugim wywolaniu musimy zawezic obszar dzialania quickselecta, by nie zepsuc opisanej w wytlumaczeniu wlasciwosci
-    quickSelect(T, 0, n - 1 - p, n - 1 - q)
-    # dodajemy odwrotnie elementy by uzyskac odpowiednia kolejnosc
-    result = [None] * (q - p + 1)
-    idx = 0
-    for i in range(n - 1 - p, n - 1 - q - 1, -1):
-        result[idx] = T[i]
-        idx += 1
+    quickSelect(T, p, n - 1, q)
 
-    return result
+    return T[p:q+1]
 
 tab = [6, 7, 8, 1, 2, 3, 5, 4]
-print(section(tab, 2, 5))
+print(section(tab, 1, 3))
+

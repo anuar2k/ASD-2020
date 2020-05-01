@@ -48,10 +48,10 @@ def pretty_sort(T):
         single = 0
         multiple = 0
 
-        for j in range(10):
-            if digits[j] == 1:
+        for digit in digits:
+            if digit == 1:
                 single += 1
-            if digits[j] > 1:
+            elif digit > 1:
                 multiple += 1
 
         T[i] = (number, single, multiple)

@@ -1,0 +1,21 @@
+Zauważając, że:
+a) do miast się wchodzi jedną stroną, a wychodzi drugą (jak w krawędzi)
+b) trzeba przejść przez wszystkie miasta
+c) przez każde miasto można przejść tylko raz
+d) należy wrócić do miasta początkowego
+e) przez oazy możemy przechodzić dowolną ilość razy, oraz przez drogi pomiędzy nimi też
+można przyjąć, że miasta to są krawędzie, a oazy to wierzchołki i sprawdzić, czy graf zawiera
+cykl Eulera <=> (tw.) stopień każdego wierzchołka jest parzysty. Problem 
+jednak jest z tym, że występują również drogi pomiędzy oazami (między którymi można przechodzić w dowolny sposób), 
+który można zażegnać puszczając DFS z każdej oazy i jeśli napotka się inną oazę - przepinając 
+krawędzie-miasta do oazy z wywołania bazowego DFS. W ten sposób z podgrafu oaz zrobimy jedną dużą oazę, po 
+której możemy poruszać się oczywiście dowolnie. Po zredukowaniu naszego grafu do wierzchołków-superoaz
+i krawędzi-miast możemy sprawdzić, czy stopień każdego wierzchołka jest parzysty poprzez policzenie ilości
+krawędzi wychodzących z każdego wierzchołka.
+
+Graf oczywiście musi być też spójny, to sprawdzenie można zrealizować również za pomocą algorytmu DFS.
+
+Do zrealizowania celu przepinania krawędzi wygodnie byłoby wykorzystać reprezentację macierzową grafu (aby stan
+istnienia krawędzi można było ustawiać natychmiastowo), wobec czego złożoność DFS'a przepinającego krawędzie 
+sąsiednich oaz do oazy z wywołań bazowych wynosiłaby O(V^2) i sprawdzenie stopnia (|V| wierzchołków)
+dla każdego wierzchołka (|V| sąsiadów) też wynosi czas O(V^2), co daje całkowitą złożoność algorytmu O(V^2).

@@ -1,5 +1,3 @@
-Aleksander Wójtowicz, 400184
-
 Aby sprawdzić, czy każda z liczb jest sumą dwóch pozostałych z tej tablicy, należy najpierw
 posortować tą tablicę (tak naprawdę jakimkolwiek algorytmem o złożoności do O(n^2)), a następnie dla każdej
 liczby z tablicy spróbować układać sumę o jej wartości taki sposób, że bierzemy wskaźnik z lewego i prawego końca tablicy,

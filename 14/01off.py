@@ -1,4 +1,3 @@
-# Aleksander Wójtowicz, 400184
 class Node:
     def __init__(self, pos, left, right):
         self.left = left

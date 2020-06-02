@@ -1,4 +1,3 @@
-# Aleksander Wójtowicz, 400184
 import math
 
 class Node:

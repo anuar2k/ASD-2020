@@ -15,17 +15,17 @@ def intervals(I):
     T = tree(uniq_edges)
     tree_insert(T, I[0])
 
-    for i in range(1, len(I) - 1):
-        res = result[i - 1]
+    for i in range(1, len(I)):
+        res = max(result[i - 1], I[i][1] - I[i][0])
         new_span = I[i]
         tree_insert(T, new_span)
 
         left = tree_intersect(T, new_span[0])
-        if len(left) == 2:
-            a = min(left[0][0], left[1][0])
-            b = max(left[0][1], left[1][1])
-            tree_remove(T, left[0])
-            tree_remove(T, left[1])
+        if len(left) > 1:
+            a = min([tup[0] for tup in left])
+            b = max([tup[1] for tup in left])
+            for tup in left:
+                tree_remove(T, tup)
 
             if b - a > res:
                 res = b - a
@@ -33,11 +33,11 @@ def intervals(I):
             tree_insert(T, (a, b))
 
         right = tree_intersect(T, new_span[1])
-        if len(right) == 2:
-            a = min(right[0][0], right[1][0])
-            b = max(right[0][1], right[1][1])
-            tree_remove(T, right[0])
-            tree_remove(T, right[1])
+        if len(right) > 1:
+            a = min([tup[0] for tup in left])
+            b = max([tup[1] for tup in left])
+            for tup in left:
+                tree_remove(T, tup)
 
             if b - a > res:
                 res = b - a

@@ -10,7 +10,7 @@ def intervals(I):
     uniq_edges = [edges[0]]
 
     for edge in edges:
-        if edge != uniq_edges[len(uniq_edges) - 1]:
+        if edge != uniq_edges[-1]:
             uniq_edges.append(edge)
     T = tree(uniq_edges)
     tree_insert(T, I[0])
@@ -34,9 +34,9 @@ def intervals(I):
 
         right = tree_intersect(T, new_span[1])
         if len(right) > 1:
-            a = min([tup[0] for tup in left])
-            b = max([tup[1] for tup in left])
-            for tup in left:
+            a = min([tup[0] for tup in right])
+            b = max([tup[1] for tup in right])
+            for tup in right:
                 tree_remove(T, tup)
 
             if b - a > res:

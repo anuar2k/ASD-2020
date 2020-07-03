@@ -38,6 +38,7 @@ def weighted_bfs(graph, source, target):
 
     parent = [None] * len(graph)
     visited = [False] * len(graph)
+    distance = [None] * len(graph)
 
     while not q.is_empty():
         v, dist_left, depth, src = q.dequeue()
@@ -45,9 +46,7 @@ def weighted_bfs(graph, source, target):
         if dist_left == 0:
             parent[v] = src
             visited[v] = True
-            
-            if v == target:
-                return depth, parent
+            distance[v] = depth
 
             for u in range(len(graph)):
                 if not visited[u] and graph[v][u] is not None:
@@ -58,7 +57,7 @@ def weighted_bfs(graph, source, target):
             if parent[v] is None:
                 q.enqueue((v, dist_left - 1, depth + 1, src))
 
-    return None, parent
+    return parent, distance
 
 graph1 = [
     [None,    3,    2, None],

@@ -38,7 +38,7 @@ def bucketSort(tab, a, low = 0, high = 1):
         buckIdx = math.floor((math.log(elem, a) - low) / (high - low) * n)
         if buckIdx == n:
             buckIdx = n - 1
-        buckets[buckIdx].append(math.log(elem, a))
+        buckets[buckIdx].append(elem)
 
     # sortujemy kazdy kubelek, O(1) * n = O(n)
     for i in range(n):
@@ -49,9 +49,6 @@ def bucketSort(tab, a, low = 0, high = 1):
     # złączamy kubełki, O(n) (wyobrazamy sobie, ze zlaczamy listy, ktore maja poczatek i koniec)
     for bucket in buckets:
         result += bucket
-
-    for i in range(len(result)):
-        result[i] = a ** result[i]
 
     return result
 

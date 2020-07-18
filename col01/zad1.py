@@ -11,6 +11,7 @@
 
 # key to funkcja, która wyłuskuje wartość, na podstawie której sortujemy
 # descending - kierunek malejący
+
 def counting_sort(T, key, descending):
     hist = [0] * 11 #wartosci od 0 do 10
 
